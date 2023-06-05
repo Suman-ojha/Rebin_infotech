@@ -1,0 +1,124 @@
+{
+  "users": [
+    {
+      "first_name": "Jhon",
+      "last_name": "Doe",
+      "email": "suman@gmail.com",
+      "gender": "male",
+      "color": "#454223",
+      "status": "active"
+    },
+    {
+        "first_name": "Jhon",
+        "last_name": "Doe",
+        "email": "suman@gmail.com",
+        "gender": "male",
+        "color": "#454223",
+        "status": "active"
+    },
+    {
+        "first_name": "Jhon",
+        "last_name": "Doe",
+        "email": "suman@gmail.com",
+        "gender": "male",
+        "color": "#454223",
+        "status": "active"
+    },
+    {
+        "first_name": "Jhon",
+        "last_name": "Doe",
+        "email": "suman@gmail.com",
+        "gender": "male",
+        "color": "#454223",
+        "status": "active"
+    },
+    {
+        "first_name": "Jhon",
+        "last_name": "Doe",
+        "email": "suman@gmail.com",
+        "gender": "male",
+        "color": "#454223",
+        "status": "active"
+    },
+    {
+        "first_name": "Jhon",
+        "last_name": "Doe",
+        "email": "suman@gmail.com",
+        "gender": "male",
+        "color": "#454223",
+        "status": "active"
+    },
+    {
+        "first_name": "Jhon",
+        "last_name": "Doe",
+        "email": "suman@gmail.com",
+        "gender": "male",
+        "color": "#454223",
+        "status": "active"
+    },
+    {
+        "first_name": "Jhon",
+        "last_name": "Doe",
+        "email": "suman@gmail.com",
+        "gender": "male",
+        "color": "#454223",
+        "status": "active"
+    },
+    {
+        "first_name": "Jhon",
+        "last_name": "Doe",
+        "email": "suman@gmail.com",
+        "gender": "male",
+        "color": "#454223",
+        "status": "active"
+    },
+    {
+        "first_name": "Jhon",
+        "last_name": "Doe",
+        "email": "suman@gmail.com",
+        "gender": "male",
+        "color": "#454223",
+        "status": "active"
+    },
+    {
+        "first_name": "Jhon",
+        "last_name": "Doe",
+        "email": "suman@gmail.com",
+        "gender": "male",
+        "color": "#454223",
+        "status": "active"
+    },
+    {
+        "first_name": "Jhon",
+        "last_name": "Doe",
+        "email": "suman@gmail.com",
+        "gender": "male",
+        "color": "#454223",
+        "status": "active"
+    },
+    {
+        "first_name": "Jhon",
+        "last_name": "Doe",
+        "email": "suman@gmail.com",
+        "gender": "male",
+        "color": "#454223",
+        "status": "inactive"
+    },
+    {
+        "first_name": "Jhon",
+        "last_name": "Doe",
+        "email": "suman@gmail.com",
+        "gender": "male",
+        "color": "#454223",
+        "status": "inactive"
+    },
+    {
+        "first_name": "Jhon",
+        "last_name": "Doe",
+        "email": "suman@gmail.com",
+        "gender": "male",
+        "color": "#454223",
+        "status": "inactive"
+    }
+  ]
+}
