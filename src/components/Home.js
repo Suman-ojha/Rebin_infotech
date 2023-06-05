@@ -1,51 +1,48 @@
 import React, { useState } from "react";
-import data from '../Data.json';
-import { AiFillDelete } from 'react-icons/ai';
+import data from "../Data1.json";
+import { AiFillDelete } from "react-icons/ai";
+import { Button, Container } from "react-bootstrap";
 
 const Home = () => {
-  const allUsers = data.users;
   const [selectedStatus, setSelectedStatus] = useState("all");
-  const [filteredUsers, setFilteredUsers] = useState(allUsers);
+  const [filteredUsers, setFilteredUsers] = useState(data);
 
-  const handleStatusChange = (event) => {
-    const selectedValue = event.target.value;
+  const handleStatusChange = (e) => {
+    const selectedValue = e.target.value;
     setSelectedStatus(selectedValue);
 
-    if (selectedValue === "all") {
-      setFilteredUsers(allUsers);
-    } else {
-      const filtered = allUsers.filter(user => user.status === selectedValue);
+    if (selectedValue === "inactive") {
+      const filtered = data.filter((user) => !user.Status);
       setFilteredUsers(filtered);
+    } else if (selectedValue === "active") {
+      const filtered = data.filter((user) => user.Status);
+      setFilteredUsers(filtered);
+    } else {
+      setFilteredUsers(data);
     }
   };
 
   const handleDelete = (id) => {
-    const updatedUsers = allUsers.filter(user => user.id !== id);
-    const updatedFilteredUsers = filteredUsers.filter(user => user.id !== id);
-
-    setFilteredUsers(updatedFilteredUsers);
-
-    if (selectedStatus === "all") {
-      setFilteredUsers(updatedUsers);
-    } else {
-      const filtered = updatedUsers.filter(user => user.status === selectedStatus);
-      setFilteredUsers(filtered);
-    }
+    const deleted = filteredUsers.filter((user) => user.id !== id);
+    setFilteredUsers(deleted);
   };
+
   const handleDownload = () => {
-    const jsonData = JSON.stringify(allUsers);
+    const jsonData = JSON.stringify(filteredUsers);
     const blob = new Blob([jsonData], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "Data.json";
+    link.download = "Data1.json";
     link.click();
   };
 
   return (
-    <div className="main-container">
-      <div className="heading">
-        <a href="#" onClick={handleDownload}>Download Json file</a>
+    <Container fluid>
+      <div className="d-flex justify-content-between">
+        <a href="#" onClick={handleDownload}>
+          Download Json file
+        </a>
         <p>Logout</p>
       </div>
 
@@ -68,30 +65,32 @@ const Home = () => {
               <th scope="col">GENDER</th>
               <th scope="col">COLOR</th>
               <th scope="col">STATUS</th>
-              <th scope="col">ACTIONS</th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
             {filteredUsers.map((user, index) => (
-              <tr key={user.id}>
-                <th scope="row">{index + 1}</th>
-                <td>{user.first_name}</td>
-                <td>{user.last_name}</td>
-                <td>{user.email}</td>
-                <td>{user.gender}</td>
-                <td>{user.color}</td>
-                <td>{user.status}</td>
+              <tr key={index}>
+                <th scope="row">
+                  <img src={user.Avatar} className="p-1 bg-gray-300 rounded-full" alt={index} />
+                </th>
+                <td>{user?.first_name}</td>
+                <td>{user?.last_name}</td>
+                <td>{user?.email}</td>
+                <td>{user?.gender}</td>
+                <td>{user?.color}</td>
+                <td>{user?.Status ? "Active" : "Inactive"}</td>
                 <td>
-                  <button onClick={() => handleDelete(user.id)}>
+                  <Button onClick={() => handleDelete(user.id)}>
                     <AiFillDelete />
-                  </button>
+                  </Button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-    </div>
+    </Container>
   );
 };
 
